@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* adding width to the photos is distorting and stretching them. 
+currently requesting small(width: 400px) from API*/
