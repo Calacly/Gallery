@@ -33,7 +33,7 @@ app.post("/", (req, res) => {
     
     const query = req.body.photoType; //tested: working
     const apiKey = process.env.API_KEY;
-    const url = "https://api.unsplash.com/search/photos?query=" + query + "&client_id=" + apiKey;
+    const url = "https://api.unsplash.com/search/photos?per_page=30&query=" + query + "&client_id=" + apiKey;
 
 
  
