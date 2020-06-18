@@ -63,7 +63,9 @@ header {
       cursor: pointer;
    }
 
-.gallery {
+   /* GALLERY SECTION */
+
+#gallery {
     margin: 0 60px 60px 60px;
     padding: 60px;
     display: grid;
@@ -73,18 +75,47 @@ header {
     overflow: hidden;
 }
 
-.gallery > img {
+#card:hover {
+    object-fit: conver;
+    transform: scale(1.7);
+    border: 5px solid white;
+    transition: all .3s ease;
+    z-index: 999;
+    cursor: pointer;
+}
+
+#card {
+   position: relative; 
+   transform: scale(1);
+}
+
+#card:active {
+    transform: scale(1.6);
+    transition: all .2s;
+}
+
+/* DO I REALLY NEED THE ARROWS? WHAT'S THE DIFFERENCE WITHOUT?? */
+#gallery > figure > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all .2s ease;
 }
 
-.hover-img:hover {
-    object-fit: conver;
-    transform: scale(1.7);
-    border: 5px solid white;
+
+
+
+/* DEV flip card */
+
+
+
+.front-face {
+    position: absolute; 
 }
 
-/* adding width to the photos is distorting and stretching them. 
-currently requesting small(width: 400px) from API*/
+.back-face {
+    position: absolute;
+    padding: 20px;
+    
+}
+
