@@ -6,6 +6,11 @@ const port = 3000;
 const bodyParser = require("body-parser");
 require("dotenv").config(); //without setting it as a variable
 
+//TODO: Add functionality to load more pages of photos
+
+//TODO: Add functionality to be able to click on a photo
+//TODO: and have it flip the card with some info 
+//TODO: about the photo on the back   
 
 
 let imagesURLS = [];
@@ -13,7 +18,6 @@ let imagesURLS = [];
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-//! Styles not working - need  static public folder
 
 app.set("view engine", "ejs");
 
@@ -46,7 +50,7 @@ fetch(url)
     imagesURLS = [];
     data.results.forEach(photo => {
         
-        imagesURLS.push(photo.urls.small)
+        imagesURLS.push(photo.urls.regular)
         
         
     })  

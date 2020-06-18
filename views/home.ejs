@@ -2,22 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- //!scale max doesn't appear to work -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Font Awesome cdn using cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
     <title>Document</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-    <form  action="/" method="POST">
-        <label for="ciyInput">Photo Type:</label>
-        <input id="ciyInput" type="text" name="photoType" placeholder="Search photos">
-        <button type="submit">Go</button>
-    </form>
+    <header>
+        <nav>
+            <form  action="/" method="POST">
+                <label for="ciyInput">Photo Type:</label>
+                <input id="ciyInput" type="text" name="photoType" placeholder="Search photos">
+                <button type="submit">Go</button>
+            </form>
+        </nav>
+    </header>
+    <div class="controls">
+        <!-- ! need to get button to scroll up into navbar -->
+        <button class="photo-loader">Load More Photos</button>
+    </div>
 
-    <%imagesURLS.forEach(image => { %>
-        <img id="image" src="<%=image%>" alt="">
-    <%})%>
-
+    <div class="gallery">
+        <%imagesURLS.forEach(image => { %>
+            <img class="hover-img" id="image" src="<%=image%>" alt="">
+        <%})%>
+    </div>
     
     
     
