@@ -6,6 +6,10 @@ const port = 3000;
 const bodyParser = require("body-parser");
 require("dotenv").config(); //without setting it as a variable
 
+// MODULES ********
+// const flip = require("./public/flip.js"); //!Don't need this as we can place the intended module in public folder and have the script run client side
+//**********************************************/
+
 //TODO: Add functionality to load more pages of photos
 
 //TODO: Add functionality to be able to click on a photo
@@ -23,7 +27,7 @@ app.set("view engine", "ejs");
 
 
 app.get("/", (req, res) => {
-
+    
     res.render("home", {imagesURLS: imagesURLS});
       
 })
