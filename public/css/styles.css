@@ -9,6 +9,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    
 }
 
 
@@ -66,41 +67,44 @@ header {
    /* GALLERY SECTION */
 
 #gallery {
-    margin: 0 60px 60px 60px;
-    padding: 60px;
+    width: 80%;
+    margin: 0 auto;
+    perspective: 2000px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 280px;
-    grid-gap: 10px;
-    overflow: hidden;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 20px;
 }
-
-#card:hover {
-    object-fit: conver;
+/* 
+.card:hover {
     transform: scale(1.7);
     border: 5px solid white;
     transition: all .3s ease;
     z-index: 999;
     cursor: pointer;
+} */
+
+.card {
+   transform-style: preserve-3d;
+   display: grid;
+   grid-template-areas: "overlap";
+   transform: scale(1); 
+   transition: all 1s ease; 
+   position: relative;
 }
 
-#card {
-   position: relative; 
-   transform: scale(1);
-   perspective: 1000px;;
-}
-
-#card:active {
+/* .card:active {
     transform: scale(1.6);
     transition: all .2s;
-}
+} */
 
 /* DO I REALLY NEED THE ARROWS? WHAT'S THE DIFFERENCE WITHOUT?? */
-#gallery > figure > img {
+#image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: all .5s ease;
+    object-fit: cover; 
+ 
+   
 }
 
 
@@ -108,21 +112,28 @@ header {
 
 /* DEV flip card */
 
-
-
+.back-face,
 .front-face {
-    position: absolute; 
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   backface-visibility: hidden;
+   
 }
 
 .back-face {
-    position: absolute;
-    padding: 20px;
-    display: none;
+    transform: rotateY(180deg);
+    background: whitesmoke;
+    padding: 30px;
+}
+
+.front-face {
+
 }
 
 .flip {
     transform: rotateY(180deg);
-    transform-style: preserve-3d;
+    
     
 }
 

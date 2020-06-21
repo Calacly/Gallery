@@ -31,12 +31,15 @@
 
     <div id="gallery">
         <%imagesURLS.forEach(image => { %>
-            <figure id="card">
-                <img class="front-face hover-img" id="image" src="<%=image%>" alt="">
-                <figcaption class="back-face">
+            <div class="card">
+                <div class="back-face">
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam culpa impedit laudantium obcaecati fugiat odio? Repellendus debitis iste quasi deserunt quaerat quidem corporis, labore necessitatibus vero voluptatem, dolor iure voluptatibus provident veritatis velit molestiae sunt rem quis laborum voluptatum. Quos corrupti natus, veniam aliquid consequatur dicta neque aperiam doloremque repellat.</p>
-                </figcaption>
-            </figure>
+                </div>
+                <div class="front-face">
+                    <img id="image" src="<%=image%>" alt="">
+                </div>
+                
+            </div>
         <%})%>
     </div>
     
