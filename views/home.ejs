@@ -7,33 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Font Awesome cdn using cdnjs -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
-
-    <title>Document</title>
+    <script src="/flip.js" defer></script>
     <link rel="stylesheet" href="/css/styles.css">
+    <title>Mini Image Gallery</title>
 </head>
 <body>
 
     <header>
         <nav>
             <form  action="/" method="POST">
-                <label for="ciyInput">Photo Type:</label>
-                <input id="ciyInput" type="text" name="photoType" placeholder="Search photos">
-                <button type="submit">Go</button>
+                <label class="search-tag" for="input">What do you want to see?</label>
+                <input class="search-box" id="input" type="text" name="photoType" placeholder="Search photos">
+                <button type="submit"><strong>GO</strong></button>
             </form>
         </nav>
     </header>
     <div class="controls">
         <!-- ! need to get button to scroll up into navbar -->
-        <button class="photo-loader">Load More Photos</button>
+        <!-- <button class="photo-loader">Load More Photos</button> -->
     </div>
 
     
 
     <div id="gallery">
         <%imagesURLS.forEach(image => { %>
-            <div class="card">
+            <div class="active card">
                 <div class="back-face">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam culpa impedit laudantium obcaecati fugiat odio? Repellendus debitis iste quasi deserunt quaerat quidem corporis, labore necessitatibus vero voluptatem, dolor iure voluptatibus provident veritatis velit molestiae sunt rem quis laborum voluptatum. Quos corrupti natus, veniam aliquid consequatur dicta neque aperiam doloremque repellat.</p>
+                    <h2 class="image-title">Image name</h2>
+                    <p>Photo description Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, odio.</p>
                 </div>
                 <div class="front-face">
                     <img id="image" src="<%=image%>" alt="">
@@ -45,6 +46,6 @@
     
     <!-- todo: need to dynamicaly add alt="" info -->
     
-    <script src="/flip.js"></script>
+    
 </body>
 </html>
