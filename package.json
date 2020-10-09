@@ -1,5 +1,5 @@
 {
-  "name": "Gallery",
+  "name": "gallery",
   "version": "1.0.0",
   "description": "A demo image gallery",
   "main": "app.js",
