@@ -2,13 +2,10 @@ const express = require("express"); //needs npm i express
 const fetch = require("node-fetch"); //normal fetch cannot be used in Node
 const ejs = require("ejs");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 require("dotenv").config(); //without setting it as a variable
 
-// MODULES ********
-// const flip = require("./public/flip.js"); //!Don't need this as we can place the intended module in public folder and have the script run client side
-//**********************************************/
 
 //TODO: Add functionality to load more pages of photos
 //TODO: Add functionality to be able to click on a photo and have it flip the card with some info about the photo on the back   
