@@ -15,7 +15,7 @@ body {
 body::after {
     content: "Gallery";
     position: absolute;
-    bottom: 0;
+    top: 90%;
     right: 2.5rem;
     color: #F5F5F5;
     text-shadow: 
@@ -126,20 +126,6 @@ header {
 }
 
 
-.card {
-   border: 5px solid whitesmoke;
-   -webkit-transform-style: preserve-3d;
-           transform-style: preserve-3d;
-   display: -ms-grid;
-   display: grid;
-   grid-template-areas: "overlap"; 
-   -webkit-transition: all .3s ease-in-out; 
-   transition: all .3s ease-in-out; 
-   box-shadow: 0 6px 9px 0 rgba(0,0,0,.15);
-   cursor: pointer;
-}
-
-
 #image {
     width: 100%;
     height: 100%;
@@ -156,6 +142,20 @@ header {
 
 /* Flip card */
 
+.card {
+    border: 5px solid whitesmoke;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "overlap"; 
+    -webkit-transition: all .3s ease-in-out; 
+    transition: all .3s ease-in-out; 
+    box-shadow: 0 6px 9px 0 rgba(0,0,0,.15);
+    cursor: pointer;
+    
+ }
+
 .back-face,
 .front-face {
    height: 100%;
@@ -163,6 +163,8 @@ header {
    position: absolute;
    -webkit-backface-visibility: hidden;
            backface-visibility: hidden;
+           /* Transform rotateX is a bugfix for Firefox. Without this the card will flip and show a mirrored image of the front side. */
+           transform: rotateX(0);
    cursor: pointer;
 }
 
