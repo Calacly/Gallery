@@ -49,12 +49,11 @@ fetch(url)
     })  
     res.redirect("/") // It is necessary to use res.redirct() at this level (inside .then(data)) try putting it just before the post() request closes and see what happens.
 })
-.catch(err => {console.log(`here: ${err}`);});
+.catch(err => {console.log(`error: ${err}`);});
 })
 
-app.listen(port, function () {
-    console.log(`Server is running on port ${port}.`);
-})
+app.listen(port, () => console.log(`Server running on port ${port}`));
+
 
 
 
