@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Font Awesome cdn using cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <script src="/flip.js" defer></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Mini Image Gallery</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <form  action="/" method="POST">
+                <label class="search-tag" for="input">What do you want to see?</label>
+                <input class="search-box" id="input" type="text" name="photoType" placeholder="Search photos">
+                <button type="submit"><strong>GO</strong></button>
+            </form>
+        </nav>
+    </header>
+    
+    <div class="controls">
+        <!--Todo: make button scroll up into navbar -->
+        <!-- <button class="photo-loader">Load More Photos</button> -->
+    </div>
+
+    
+
+    <div id="gallery">
+        <%imagesURLS.forEach(image => { %>
+            <div class="active card">
+                <div class="back-face">
+                    <h2 class="image-title">Image name</h2>
+                    <p>Photo description Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, odio.</p>
+                </div>
+                <div class="front-face">
+                    <img id="image" src="<%=image%>" alt="">
+                </div>
+                
+            </div>
+        <%})%>
+    </div>
+    
+    <!-- todo: need to dynamicaly add alt="" info for accessibility -->
+    
+    
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* Font: Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+}
+
+body::after {
+    content: "Gallery";
+    position: absolute;
+    top: 90%;
+    right: 2.5rem;
+    color: #F5F5F5;
+    text-shadow: 
+    -8px -8px 12px rgba(255,255,255,.5),
+    8px 8px 12px rgba(0,0,0,0.08);
+    font-family: 'Marck Script', cursive;
+    font-size: 10rem;
+    font-size: clamp(10rem, 15vw, 15rem);
+    z-index: -1;
+}
+
+
+header {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content; /* 64 + 16 */
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -16px; 
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+   }
+    
+   header::before,
+   header::after {
+    content: '';
+    display: block;
+    height: 16px;
+    position: -webkit-sticky;
+    position: sticky;
+   }
+    
+   header::before {
+    top: 48px; /* 64 - 16 */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+   }
+    
+   header::after {
+    background: -webkit-linear-gradient(white, rgba(245,245,245,0.3));
+    background: linear-gradient(white, rgba(245,245,245,0.3));
+    top: 0;
+    z-index: 2;
+   }
+    
+   header > nav {
+    background: #333;
+    height: 64px;
+    padding: 20px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    margin-top: -16px;
+    z-index: 3;
+   }
+
+   form label {
+       color: #fff;
+       font-size: 1.5rem;
+       margin-right: 1rem;
+   }
+
+   .search-box {
+       padding: .3rem .9rem;
+       margin-bottom: 1rem;
+       border: 2px solid #0be881;
+   }
+
+   button[type="submit"] {
+       margin-left: 1rem;
+       padding: .3rem 2rem;
+       cursor: pointer;
+       background: #0be881;
+       border: 1px solid #0be881;
+       -webkit-transition: all .4s ease;
+       transition: all .4s ease;
+   }
+
+   button[type="submit"]:hover {
+      background: transparent;
+      border: 1px solid #0be881;
+      color: #fff;
+   }
+
+   /* GALLERY SECTION */
+
+#gallery {
+    width: 80%;
+    margin: 40px auto;
+    -webkit-perspective: 2000px;
+            perspective: 2000px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 20px;
+    
+}
+
+.active:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    border: 5px solid white;
+    z-index: 999;
+    cursor: pointer;
+}
+
+
+#image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; 
+}
+
+.image-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Flip card */
+
+.card {
+    border: 5px solid whitesmoke;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "overlap"; 
+    -webkit-transition: all .3s ease-in-out; 
+    transition: all .3s ease-in-out; 
+    box-shadow: 0 6px 9px 0 rgba(0,0,0,.15);
+    cursor: pointer;
+    
+ }
+
+.back-face,
+.front-face {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   -webkit-backface-visibility: hidden;
+           backface-visibility: hidden;
+           /* Transform rotateX is a bugfix for Firefox. Without this the card will flip and show a mirrored image of the front side. */
+           transform: rotateX(0);
+   cursor: pointer;
+}
+
+.back-face {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background: #ddd;
+    padding: 30px;
+    color: #333;
+}
+
+.flip {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1268px) {
+    body::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-tag {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 325px) {
+
+    button[type="submit"] {
+        margin-top: 1rem;
+    }
+}
+
