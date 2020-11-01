@@ -1,5 +1,9 @@
 /node_modules
 npm-debug.log
 .DS_Store
+<<<<<<< HEAD
 .env
 .vscode
+=======
+.env
+>>>>>>> 51661a533ab5883cf2017599b050d618f695bac3
