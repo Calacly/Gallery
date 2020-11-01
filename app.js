@@ -2,6 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch"); 
 const ejs = require("ejs");
 const app = express();
+const path = require('path');
 const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 require("dotenv").config(); 
@@ -11,18 +12,20 @@ require("dotenv").config();
 //TODO: Add functionality to be able to click on a photo and have it flip the card with some info about the photo on the back   
 
 
+
+
 let photoData = [];
 
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.set("view engine", "ejs");
 
 
 app.get("/", (req, res) => {
-    
+   
     res.render("home", {
         photoData: photoData,
     });

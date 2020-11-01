@@ -196,6 +196,9 @@ header {
             transform: rotateY(180deg);
 }
 
+
+
+
 @media screen and (max-width: 1268px) {
     body::after {
         display: none;
